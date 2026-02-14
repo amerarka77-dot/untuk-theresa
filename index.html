@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day,  Freyaa!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); overflow-x: hidden; color: #5a2d35; }
+        #gift-phase { display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; transition: opacity 1s ease-out; }
+        .gift-box-container { cursor: pointer; transition: transform 0.5s ease-in-out; font-size: 100px; user-select: none; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2)); }
+        .stage-1 { transform: scale(1.5); } .stage-2 { transform: scale(1.0); } .stage-3 { transform: scale(0.6); }
+        .instruction { margin-top: 20px; font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #d6336c; animation: pulse 2s infinite; }
+        @keyframes shake { 0% { transform: translate(1px, 1px) rotate(0deg); } 10% { transform: translate(-1px, -2px) rotate(-1deg); } 20% { transform: translate(-3px, 0px) rotate(1deg); } 30% { transform: translate(3px, 2px) rotate(0deg); } 40% { transform: translate(1px, -1px) rotate(1deg); } 50% { transform: translate(-1px, 2px) rotate(-1deg); } 60% { transform: translate(-3px, 1px) rotate(0deg); } 70% { transform: translate(3px, 1px) rotate(-1deg); } 80% { transform: translate(-1px, -1px) rotate(1deg); } 90% { transform: translate(1px, 2px) rotate(0deg); } 100% { transform: translate(1px, -2px) rotate(-1deg); } }
+        .shaking.stage-1 { animation: shake 0.8s; } .shaking.stage-2 { animation: shake 0.8s; } .shaking.stage-3 { animation: shake 0.8s; }
+        @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+        #main-content { display: none; opacity: 0; padding: 40px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .content-section { margin-bottom: 60px; opacity: 0; transform: translateY(30px); transition: all 1.5s ease-out; }
+        .content-section.visible { opacity: 1; transform: translateY(0); }
+        .photo-frame { background: white; padding: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: rotate(-2deg); display: inline-block; margin-bottom: 20px; border-radius: 4px; }
+        .photo-frame img { max-width: 100%; height: auto; max-height: 400px; display: block; border-radius: 2px; }
+        .love-text { font-family: 'Dancing Script', cursive; font-size: 1.8rem; margin-top: 15px; color: #d6336c; line-height: 1.4; }
+        .long-text { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 500; }
+        .closing-gif-section { margin-top: 50px; display: flex; justify-content: center; align-items: center; height: 450px; position: relative; }
+        .gif-stack { position: relative; width: 300px; height: 400px; }
+        .gif-stack img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); opacity: 0; animation: gifAnimation 4s infinite; }
+        .gif-stack img:nth-child(1) { animation-delay: 0s; } .gif-stack img:nth-child(2) { animation-delay: 1s; } .gif-stack img:nth-child(3) { animation-delay: 2s; } .gif-stack img:nth-child(4) { animation-delay: 3s; }
+        @keyframes gifAnimation { 0% { opacity: 0; } 10% { opacity: 1; z-index: 1; } 25% { opacity: 1; } 35% { opacity: 0; z-index: 0; } 100% { opacity: 0; } }
+        footer { margin-top: 30px; font-size: 0.9rem; color: #7a4d55; }
+        .d-none { display: none !important; }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="audio_0.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="gift-phase">
+        <div id="gift-box" class="gift-box-container stage-1" onclick="handleGiftClick()">💝</div>
+        <p class="instruction" id="gift-instruction">Pencet kadonya, sayang...</p>
+    </div>
+
+    <div id="main-content">
+        <div class="content-section">
+            <div class="photo-frame" style="transform: rotate(-3deg);">
+                <img src="image_0.jpeg" alt="First Photo">
+            </div>
+            <p class="love-text">"The first photo that made me realize how much I love you"</p>
+        </div>
+
+        <div class="content-section">
+            <div class="photo-frame" style="transform: rotate(2deg);">
+                <img src="image_1.jpeg" alt="Beautiful Together">
+            </div>
+            <p class="love-text">"This photo makes me realize how beautiful it is when we are together"</p>
+        </div>
+
+        <div class="content-section">
+            <div class="photo-frame" style="transform: rotate(-1deg);">
+                <img src="image_2.jpeg" alt="Silly Us">
+            </div>
+            <p class="love-text long-text">
+                "aku sadar bahwa di hatiku yang paling dalam, ada seseorang yang tanpa suatu hal yang rumit, cukup kesederhanaan bisa membuat semuanya jadi indah, terimakasih telah mengajarkan itu padaku Freya"
+            </p>
+        </div>
+
+        <div class="content-section closing-gif-section">
+            <div class="gif-stack">
+                <img src="image_4.jpeg" alt="Momen 1">
+                <img src="image_5.jpeg" alt="Momen 2">
+                <img src="image_6.jpeg" alt="Momen 3">
+                <img src="image_7.jpeg" alt="Momen 4">
+            </div>
+        </div>
+
+        <footer>Happy Valentine's Day 💕</footer>
+    </div>
+
+    <script>
+        let giftStage = 1;
+        const giftBox = document.getElementById('gift-box');
+        const giftPhase = document.getElementById('gift-phase');
+        const mainContent = document.getElementById('main-content');
+        const music = document.getElementById('bg-music');
+        const instruction = document.getElementById('gift-instruction');
+        let musicStarted = false;
+
+        function handleGiftClick() {
+            if (!musicStarted) {
+                music.volume = 0.5;
+                music.play().catch(e => console.log("Audio play error:", e));
+                musicStarted = true;
+            }
+            if (giftBox.classList.contains('shaking')) return;
+            giftBox.classList.add('shaking');
+            setTimeout(() => {
+                giftBox.classList.remove('shaking');
+                if (giftStage < 3) {
+                    giftBox.classList.remove(`stage-${giftStage}`);
+                    giftStage++;
+                    giftBox.classList.add(`stage-${giftStage}`);
+                    if(giftStage === 2) instruction.innerText = "Masih ada lagi? Coba buka...";
+                    if(giftStage === 3) instruction.innerText = "Satu kali lagi, yang terakhir!";
+                } else {
+                    revealMainContent();
+                }
+            }, 800);
+        }
+
+        function revealMainContent() {
+            giftPhase.style.opacity = '0';
+            setTimeout(() => {
+                giftPhase.classList.add('d-none');
+                mainContent.style.display = 'block';
+                setTimeout(() => {
+                    mainContent.style.opacity = '1';
+                    animateContentSections();
+                }, 100);
+            }, 1000);
+        }
+
+        function animateContentSections() {
+            const sections = document.querySelectorAll('.content-section');
+            let delayTime = 500;
+            sections.forEach((section) => {
+                setTimeout(() => {
+                    section.classList.add('visible');
+                }, delayTime);
+                delayTime += 2500;
+            });
+        }
+    </script>
+</body>
+</html>
